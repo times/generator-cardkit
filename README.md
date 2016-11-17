@@ -2,6 +2,8 @@
 
 > Generator for CardKit, making getting started a breeze
 
+[![npm version](https://badge.fury.io/js/generator-cardkit.svg)](https://badge.fury.io/js/generator-cardkit)
+
 ## Installation & usage
 
 First, install Yeoman and the CardKit generator:
