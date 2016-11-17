@@ -16,7 +16,7 @@ Then create a directory for your CardKit project:
 
 Finally, use Yeoman to start generating your new project:
 
-    $ yo times-react-webpack
+    $ yo cardkit
 
 
 ## Configuring CardKit
