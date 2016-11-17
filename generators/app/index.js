@@ -51,7 +51,13 @@ module.exports = yeoman.Base.extend({
       name: 'email',
       message: 'Author email',
       default: (author.email ? author.email.replace(/\n/g, '') : null)
-    }];
+    },
+    {
+      name: 'type',
+      type: 'list',
+      message: 'Is this for use in the browser, or on a Node.js server?',
+      choices: ['Browser', 'Server']
+    },];
 
     return this.prompt(prompts).then((props) => {
       // To access props later use this.props.someAnswer;
@@ -64,25 +70,45 @@ module.exports = yeoman.Base.extend({
       name: this.props.name,
       repo: this.props.repo,
       description: this.props.description,
+      type: this.props.type,
       gitInfo: {
         name: this.props.author,
         email: this.props.email
       }
     };
 
-    // Define our templatable files
-    const templateFiles = {
-      'src': './src',
-      'webpack': './webpack',
-      'package.json': './package.json', 
-      'README.md': './README.md'
-    };
+    let templateFiles, staticFiles;
 
-    // Define files that don't require templated data
-    const staticFiles = {
-      'webpack.config.js': './webpack.config.js',
-      '.gitignore': './.gitignore'
-    };
+    switch(templateData.type) {
+      case 'Browser':
+        // Define our templatable files
+        templateFiles = {
+          'browser/src': './src',
+          'browser/webpack': './webpack',
+          'browser/package.json': './package.json', 
+          'browser/README.md': './README.md'
+        };
+
+        // Define files that don't require templated data
+        staticFiles = {
+          'browser/webpack.config.js': './webpack.config.js',
+          'browser/.gitignore': './.gitignore'
+        };
+        break;
+      case 'Server':
+        // Define our templatable files
+        templateFiles = {
+          'server/src': './src',
+          'server/package.json': './package.json', 
+          'server/README.md': './README.md'
+        };
+
+        // Define files that don't require templated data
+        staticFiles = {
+          'server/.gitignore': './.gitignore'
+        };
+        break;
+    }
 
     // Loop over template files
     Object.keys(templateFiles).forEach((path) => {
