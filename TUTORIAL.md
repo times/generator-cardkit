@@ -89,7 +89,7 @@ Let's start with the text field. First we'll work out the key information we nee
       }
     },
 
-Read through the above code and get a feeling for what it is doing. Add a comma after the `}` on line 22, then paste in the above code. Save `layers.js`. If you look in your browser at http://localhost:8000 you should see an additional line of text. If you click on _Content_ on the left hand side, you should see your new text field appear in the panel. Edit the value of any of the fields there, and you should see the image update in real-time.
+Read through the above code and get a feeling for what it is doing. Paste in the above code after line 22. Save `layers.js`. If you look in your browser at http://localhost:8000 you should see an additional line of text. If you click on _Content_ on the left hand side, you should see your new text field appear in the panel. Edit the value of any of the fields there, and you should see the image update in real-time.
 
 We're now going to add an image uploader. Let's do the same as before, and build up an object that will represent our image:
 
@@ -113,7 +113,7 @@ We're now going to add an image uploader. Let's do the same as before, and build
           step: 10
         }
       }
-    }
+    },
 
 Paste this code just after the previous code you copied into your `layers.js` file. Save it, and reload your browser. After clicking on _Content_ on the left hand side, you should see a file uploader. Select a file from your local computer, and you should see it appear on the image. Use the range slider to resize it, and try dragging it around on your image.
 

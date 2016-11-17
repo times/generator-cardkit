@@ -19,5 +19,5 @@ module.exports = {
         step: 2
       }
     }
-  }
+  },
 };
