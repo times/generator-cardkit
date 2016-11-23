@@ -1,6 +1,6 @@
 {
   "name": "generator-cardkit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Yeoman Generator for CardKit",
   "files": [
     "generators/app"

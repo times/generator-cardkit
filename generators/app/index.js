@@ -15,7 +15,7 @@ module.exports = yeoman.Base.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.red('generator-times-react-webpack') + ' generator!'
+      'Welcome to the ' + chalk.red('generator-cardkit') + ' generator!'
     ));
 
     const author = {
@@ -92,7 +92,7 @@ module.exports = yeoman.Base.extend({
         // Define files that don't require templated data
         staticFiles = {
           'browser/webpack.config.js': './webpack.config.js',
-          'browser/.gitignore': './.gitignore'
+          'browser/_gitignore': './.gitignore'
         };
         break;
       case 'Server':
@@ -105,7 +105,7 @@ module.exports = yeoman.Base.extend({
 
         // Define files that don't require templated data
         staticFiles = {
-          'server/.gitignore': './.gitignore'
+          'server/_gitignore': './.gitignore'
         };
         break;
     }
